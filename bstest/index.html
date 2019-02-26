@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+<h1>Registration Form</h1>
+
+</head>
+<body>
+    <form name="myForm">
+
+        <div class="Container-fluid">
+
+            <div class="row mt-4">
+                <label class="form-label col-md-1">First Name:</label>
+                <input type="text" id="fname" class="form-control col-md-5" pattern="^[A-Za-z\s\.]{1,20}$"
+                    title="Characters can only be alphabet, period & White space. Max 20 char." required>
+
+            </div>
+            <div class="row mt-4">
+                <label class="form-label col-md-1">Last Name:</label>
+                <input type="text" class="form-control col-md-5" id="lname" pattern="^[A-Za-z\s\.]{1,20}$"
+                    title="Characters can only be alphabet, period & White space. Max 20 char." required>
+
+            </div>
+            <div class="row mt-4">
+                <label class="form-label col-md-1" id="ageRange">Age:</label>
+                <input type="number" name="ag" class="form-control col-md-1" onsubmit="return validateForm()">
+            </div>
+            <div class="row mt-4">
+                <label class="form-label col-md-1">Country:</label>
+                <select class="form-control col-md-3">
+                    <option>India</option>
+                    <option>China</option>
+                    <option>Nepal</option>
+                    <option>Bangladesh</option>
+                </select>
+            </div>
+            <br>
+            <div class="row mt-4">
+                <label class="form-label col-md-1">Gender:</label>
+                <div class="radio">
+                    <label><input type="radio" name="gender" value="Male" checked>Male</label>
+                </div>&nbsp;&nbsp;
+                <div class="radio"><label><input type="radio" name="gender" value="Female">Female</label></div>
+                &nbsp;&nbsp;
+
+                <div class="radio"><label><input type="radio" name="gender" value="Other">Other</label></div>
+                &nbsp;&nbsp;
+            </div>
+            <br>
+            <div class="checkbox row mt-4 col-md-4">
+
+                <label><input type="checkbox" id="checks" value="">&nbsp;I Agree to The Terms & Conditions</label>
+            </div>
+            <div class="row mt-4">
+                <input type="submit" class="btn btn-primary offset-md-2" id="sub" value="Register" onclick="myFunction()" disabled />
+
+            </div>
+        </div>
+
+
+    </form>
+    <script src="app.js"></script>
+    <script>
+            function myFunction() {
+              var x, text;
+            
+              // Get the value of the input field with id="numb"
+              x = document.getElementById("ageRange").value;
+            
+              // If x is Not a Number or less than one or greater than 10
+              if (isNaN(x) || x < 19 || x > 99) {
+                alert("Incorrect Age. Should be Between 18 & 99");
+              } 
+              
+            }
+            </script>
+</body>
+
+</html>
